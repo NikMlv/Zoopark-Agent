@@ -10,9 +10,6 @@
  +    	message.reply('pong');
  +  	}
  +});
- +client.on('message', message => {
- +    if (message.content === 'привет') {
- +    	message.reply('привет!');
  +  	}
  +// THIS  MUST  BE  THIS  WAY
  +client.login(process.env.BOT_TOKEN);
