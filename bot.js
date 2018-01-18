@@ -11,5 +11,10 @@
  +  	}
  +});
  +  	}
- +// THIS  MUST  BE  THIS  WAY
+ + client.on('message', message => {
+ +    if (message.content === 'Привет') {
+ +    	message.reply('пока');
+ +  	}
+ +});
+ +  	}
  +client.login(process.env.BOT_TOKEN);
