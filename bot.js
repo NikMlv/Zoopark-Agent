@@ -7,8 +7,9 @@ client.on('ready', () => {
 
 client.on('message', message => {
     if (message.content === 'jv!привет') {
-    	message.reply('привет!');
+    	message.reply('Привет!');
   	}
+});
 
-    // не убирать это блять
+//нельзя трогать
 client.login(process.env.BOT_TOKEN);
