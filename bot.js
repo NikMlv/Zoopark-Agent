@@ -1,20 +1,15 @@
-+const Discord = require('discord.js');
- +const client = new Discord.Client();
- +
- +client.on('ready', () => {
- +    console.log('I am ready!');
- +});
- +
- +client.on('message', message => {
- +    if (message.content === 'ping') {
- +    	message.reply('pong');
- +  	}
- +});
- +  	}
- + client.on('message', message => {
- +    if (message.content === 'Привет') {
- +    	message.reply('пока');
- +  	}
- +});
- +  	}
- +client.login(process.env.BOT_TOKEN);
+const Discord = require('discord.js');
+const client = new Discord.Client();
+
+client.on('ready', () => {
+    console.log('I am ready!');
+});
+
+client.on('message', message => {
+    if (message.content === 'privet') {
+    	message.reply('privet!');
+  	}
+});
+
+// не убирать это блять
+client.login(process.env.BOT_TOKEN);
