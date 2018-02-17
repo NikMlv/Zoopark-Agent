@@ -46,8 +46,8 @@ client.on("message", message => {
     message.delete().catch(O_o=>{}); 
     message.channel.send(sayMessage).catch(O_o=>{message.reply('Что-то пошло не так');});
   	} else if (command === "clear") {
-  		if(!message.member.roles.some(r=>[rule.owner].includes(r.id)))
-  			return message.reply("Права есть?!");
+  		if(!message.member.roles.some(r=>[rule.st_moder, rule.ml_admin, rule.st_admin, rule.creator].includes(r.id)) && !creators.includes(message.author.id))
+  			return message.reply("Извините, ебобобам слово не давали!");
 		message.delete();
 		let content = message.content.slice(process.env.PREFIX.length + 8);
 		let messagecount = parseInt(args[0])+1;
@@ -62,23 +62,23 @@ client.on("message", message => {
 				title: "Ошибка удаления сообщений",
 				description: `\`${content}\` либо меньше двух, либо не является числом.`,
 				footer: {
-				  	text: "ZOOPARK",
+				  	text: "JonedVoice",
 			  	},
 			}});
 		}
-	} else if (command === "test") {
-
+	} else if (command === "test" && creators.includes(message.author.id)) {
+		message.channel.send(args[0]);
 	} else {
 		message.reply({embed: {
 			color: 16711680,
 			title: "Ошибка",
-			description: `Комманды \`${command}\` нету!`,
+			description: `ЭЭЭЭ! Комманды \`${command}\` нету! Алло, ты шо, ебобо?`,
 			footer: {
-			  	text: "ZOOPARK",
+			  	text: "JonedVoice",
 		  	},
 		}})
 	}
 });
 
-client.login(process.env.BOT_TOKEN);
+client.login(process.env.BOT_TOKEN);login(process.env.BOT_TOKEN);
 
