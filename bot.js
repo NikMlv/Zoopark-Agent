@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const rule = {st_admin: "371003132983115777", ml_admin: "371003796454899712", st_moder: "394505884266528788", ml_moder: "371003753781788684", creator: "406442606273363990"}
-const creators = ['207821802431315968', '168255014282854401']
+const rule = {st_admin: "371003132983115777", ml_admin: "371003796454899712", st_moder: "394505884266528788", ml_moder: "371003753781788684", creator: "<401720942818099200"}
+const creators = ['2078218024313159']
 
 
 function declOfNum(number, titles) {  
@@ -25,9 +25,9 @@ client.on("guildMemberAdd", member => {
   const embed = new Discord.RichEmbed()
   .setTitle('Добро пожаловать')
   .setColor("#ee83ac")
-  .setDescription("\nПриветсвуем тебя,наш новый участник!\nНадеемся, что тебе у нас понравится.\n\nТы попал на сервер __#JonedVoice__\nСервер, где находят друзей, играют с ними, да и просто проводят свободное время.\n\nДля того чтобы ты не запутался, администрация составила список каналов, которые ты должен обязательно\nпосетить, ибо там находится полезная информация для новичков, вроде тебя.\nИ так, перечень важных каналов:\n\nКанал **#info** - в основном предназначен для новичков сервера. Здесь находятся все ответы на твои вопросы,связаные с нашим сервером.\n\nВ разделе **#News** - ты можешь прочитать информацию об обновлениях нашего сервера и посмотреть на приятные плюшки.\n\nЕсли ты хочешь проверить свою удачу, то тебе в канал **#Contestchannel** - здесь ты можешь поучаствовать в конкурсе на внутрисерверную валюту и не только.\n\nТекстовый канал **#Chatik** - предназначен для общения между игроками.\n\nДругой текстовый канал, именуемый **#commands** - используется для команд ботов, которые присуствуют на сервере.\n\n**#fapchannel** - канал для клубнички.")
-  .setFooter("JonedVoice")
-  .setThumbnail("https://cdn.discordapp.com/attachments/332255338805854208/411963427972579328/neon231.png")
+  .setDescription("\nПриветствую тебя на сервере ZOOPARK!\nЭто официальный дискорд-сервер **Happy Wolf'a**.\n\nПожалуйста, прочти и соблюдай правила, которые ты сможешь найти в **#rules**, как и описание ролей сервера.\n\nОбязательно проверяй #updates, ведь там можно найти много чего интерсного.\n\nГлавное будь дружелюбным по отношению к другим участникам, а также соблюдай правила, и тогда никаких проблем не будет. \n\n**Удачи!**") ")
+  .setFooter("ZOOPARK")
+  .setThumbnail("https://cdn.discordapp.com/attachments/404577060292526080/414409956024909825/unnamed.png")
   .setTimestamp()
   member.send({embed});
 });
@@ -47,18 +47,18 @@ client.on("message", message => {
 	  const embed = new Discord.RichEmbed()
 	  .setTitle('Добро пожаловать')
 	  .setColor("#ee83ac")
-	  .setDescription("\nПриветсвуем тебя,наш новый участник!\nНадеемся, что тебе у нас понравится.\n\nТы попал на сервер __#JonedVoice__\nСервер, где находят друзей, играют с ними, да и просто проводят свободное время.\n\nДля того чтобы ты не запутался, администрация составила список каналов, которые ты должен обязательно\nпосетить, ибо там находится полезная информация для новичков, вроде тебя.\nИ так, перечень важных каналов:\n\nКанал **#info** - в основном предназначен для новичков сервера. Здесь находятся все ответы на твои вопросы,связаные с нашим сервером.\n\nВ разделе **#News** - ты можешь прочитать информацию об обновлениях нашего сервера и посмотреть на приятные плюшки.\n\nЕсли ты хочешь проверить свою удачу, то тебе в канал **#Contestchannel** - здесь ты можешь поучаствовать в конкурсе на внутрисерверную валюту и не только.\n\nТекстовый канал **#Chatik** - предназначен для общения между игроками.\n\nДругой текстовый канал, именуемый **#commands** - используется для команд ботов, которые присуствуют на сервере.\n\n**#fapchannel** - канал для клубнички.")
-	  .setFooter("JonedVoice")
-	  .setThumbnail("https://cdn.discordapp.com/attachments/332255338805854208/411963427972579328/neon231.png")
+	  .setDescription("\nПриветствую тебя на сервере ZOOPARK!\nЭто официальный дискорд-сервер **Happy Wolf'a**.\n\nПожалуйста, прочти и соблюдай правила, которые ты сможешь найти в **#rules**, как и описание ролей сервера.\n\nОбязательно проверяй #updates, ведь там можно найти много чего интерсного.\n\nГлавное будь дружелюбным по отношению к другим участникам, а также соблюдай правила, и тогда никаких проблем не будет. \n\n**Удачи!**") ")
+	  .setFooter("ZOOPARK")
+	  .setThumbnail("https://cdn.discordapp.com/attachments/404577060292526080/414409956024909825/unnamed.png")
 	  .setTimestamp()
 	  message.author.send({embed});
 	} else if ((command === "скажи" || command === "say") && (creators.includes(message.author.id) || message.member.roles.some(r=>[rule.st_admin, rule.creator].includes(r.id)))) {
     const sayMessage = args.join(" ");
     message.delete().catch(O_o=>{}); 
-    message.channel.send(sayMessage).catch(O_o=>{message.reply('ты ебобо?');});
+    message.channel.send(sayMessage).catch(O_o=>{message.reply('дописать забыл');});
   	} else if (command === "очистить" || command == "clear" || command == "del") {
   		if(!message.member.roles.some(r=>[rule.st_moder, rule.ml_admin, rule.st_admin, rule.creator].includes(r.id)) && !creators.includes(message.author.id))
-  			return message.reply("Извините, ебобобам слово не давали!");
+  			return message.reply("Все права у MeowGMS");
 		message.delete();
 		let content = message.content.slice(process.env.PREFIX.length + 8);
 		let messagecount = parseInt(args[0])+1;
@@ -73,7 +73,7 @@ client.on("message", message => {
 				title: "Ошибка удаления сообщений",
 				description: `\`${content}\` либо меньше двух, либо не является числом.`,
 				footer: {
-				  	text: "JonedVoice",
+				  	text: "ZOOPARK",
 			  	},
 			}});
 		}
@@ -82,31 +82,31 @@ client.on("message", message => {
 		if (!member) 
 		return message.author.send({embed: {
 				color: 16711680,
-				title: "Ошибка кражи",
-				description: `Тот, у кого вы пытались украсть аватарку или не существует, или украл у вас мозг.`,
+				title: "Ошибка вывода",
+				description: `Тот, у кого вы пытались украсть аватарку не существует.`,
 				footer: {
-				  	text: "JonedVoice",
+				  	text: "ZOOPARK",
 			  	},
 			}});
 		const embed = new Discord.RichEmbed()
 		.setTitle(`Аватарка пользователя ${member.user.tag}`)
 		.setImage(member.user.avatarURL)
-		.setFooter("JonedVoice")
+		.setFooter("ZOOPARK")
 		.setColor(parseInt(getRandomInt(0,16777214)));
 		message.channel.send({embed});
 		message.delete();
 	} else if (command == "помощь" || command == "помошь" || command == "помощ" || command == "помош" || command == "помоги" || command == "памаги" || command == "хэлп" || command == "хелп" || command == "help") {
 		var cmds = '';
 		if (creators.includes(message.author.id)) {
-			cmds = cmds + `\`${process.env.PREFIX}скажи [текст]\` - написать сообщение от имени бота.\n`;
+			cmds = cmds + `\`${process.env.PREFIX}скажи или say [текст]\` - написать сообщение от имени бота.\n`;
 		}
 		if(message.member.roles.some(r=>[rule.st_moder, rule.ml_admin, rule.st_admin, rule.creator].includes(r.id)) || creators.includes(message.author.id)) {
-			cmds = cmds + `\`${process.env.PREFIX}очистить [кол-во]\` - очистить определённое кол-во сообщений.\n`;
+			cmds = cmds + `\`${process.env.PREFIX}очистить или clear [кол-во]\` - очистить определённое кол-во сообщений.\n`;
 		}
-		cmds = cmds + `\`${process.env.PREFIX}аватарка [упоминание человека]\` - украсть аватарку.\n`;
+		cmds = cmds + `\`${process.env.PREFIX}аватарка или avatar[упоминание человека]\` - Просмотр аватарки.\n`;
 		const embed = new Discord.RichEmbed()
 		.setTitle(`Помощь`)
-		.setFooter("JonedVoice")
+		.setFooter("ZOOPARK")
 		.setColor(parseInt(getRandomInt(0,16777214)))
 		.setDescription(cmds);
 		message.channel.send({embed});
@@ -114,9 +114,9 @@ client.on("message", message => {
 		message.reply({embed: {
 			color: 16711680,
 			title: "Ошибка",
-			description: `ЭЭЭЭ! Комманды \`${command}\` нету! Алло, ты шо, ебобо?`,
+			description: `Комманды \`${command}\` нету! Либо у вас нет прав.`,
 			footer: {
-			  	text: "JonedVoice",
+			  	text: "ZOOPARK",
 		  	},
 		}})
 	}
