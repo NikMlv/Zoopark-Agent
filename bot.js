@@ -13,7 +13,7 @@ function declOfNum(number, titles) {
 client.on("guildMemberAdd", member => {
   const embed = new Discord.RichEmbed()
   .setTitle('Добро пожаловать')
-  .setColor("#ee83ac")
+  .setColor("#7c00ff")
   .setDescription("\nПриветствую тебя на сервере ZOOPARK!\nЭто официальный дискорд-сервер Happy Wolf'a.\n\nПожалуйста, прочти и соблюдай правила, которые ты сможешь найти в #rules, как и описание ролей сервера.\n\nОбязательно проверяй #updates, ведь там можно найти много чего интерсного.\n\nГлавное будь дружелюбным по отношению к другим участникам, а также соблюдай правила, и тогда никаких проблем не будет. \n\nУдачи! ")
   .setFooter("ZOOPARK")
   .setThumbnail("https://cdn.discordapp.com/attachments/404577060292526080/414409956024909825/unnamed.png")
