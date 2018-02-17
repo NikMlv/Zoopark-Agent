@@ -16,7 +16,7 @@ client.on("guildMemberAdd", member => {
   .setColor("#ee83ac")
   .setDescription("\nПриветствую тебя на сервере ZOOPARK!\nЭто официальный дискорд-сервер Happy Wolf'a.\n\nПожалуйста, прочти и соблюдай правила, которые ты сможешь найти в #rules, как и описание ролей сервера.\n\nОбязательно проверяй #updates, ведь там можно найти много чего интерсного.\n\nГлавное будь дружелюбным по отношению к другим участникам, а также соблюдай правила, и тогда никаких проблем не будет. \n\nУдачи! ")
   .setFooter("ZOOPARK")
-  .setThumbnail("https://cdn.discordapp.com/attachments/332255338805854208/411963427972579328/neon231.png")
+  .setThumbnail("https://cdn.discordapp.com/attachments/404577060292526080/414409956024909825/unnamed.png")
   .setTimestamp()
   member.send({embed});
 });
@@ -38,7 +38,7 @@ client.on("message", message => {
 	  .setColor("#ee83ac")
 	  .setDescription("\nПриветствую тебя на сервере ZOOPARK!\nЭто официальный дискорд-сервер Happy Wolf'a.\n\nПожалуйста, прочти и соблюдай правила, которые ты сможешь найти в #rules, как и описание ролей сервера.\n\nОбязательно проверяй #updates, ведь там можно найти много чего интерсного.\n\nГлавное будь дружелюбным по отношению к другим участникам, а также соблюдай правила, и тогда никаких проблем не будет. \n\nУдачи!")
 	  .setFooter("ZOOPARK")
-	  .setThumbnail("https://cdn.discordapp.com/attachments/332255338805854208/411963427972579328/neon231.png")
+	  .setThumbnail("https://cdn.discordapp.com/attachments/404577060292526080/414409956024909825/unnamed.png")
 	  .setTimestamp()
 	  message.author.send({embed});
 	} else if (command === "say" && creators.includes(message.author.id)) {
