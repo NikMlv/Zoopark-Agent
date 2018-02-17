@@ -1,6 +1,6 @@
 nst Discord = require('discord.js');
 const client = new Discord.Client();
-const rule = {st_admin: "371003132983115777", ml_admin: "371003796454899712", st_moder: "394505884266528788", ml_moder: "371003753781788684", creator: "406442606273363990"}
+const rule = {st_admin: "371003132983115777", ml_admin: "371003796454899712", st_moder: "394505884266528788", ml_moder: "371003753781788684", meow: "&401720942818099200"}
 const creators = ['207821802431315968', '168255014282854401']
 
 
@@ -25,17 +25,6 @@ client.on("guildMemberAdd", member => {
   .setTimestamp()
   member.send({embed});
 });
-client.on("message", message => {
-	if (message.channel.id == '409054265626329105') {
-      	message.react("👍");
-      	message.react("👎");
-	}
-
-	if(message.author.bot) return;
-	if(message.content.indexOf(process.env.PREFIX) !== 0) return;
-
-	const args = message.content.slice(process.env.PREFIX.length).trim().split(/ +/g);
-  	const command = args.shift().toLowerCase();
 
 	if (command == 'тест_приветствия') {
 	  const embed = new Discord.RichEmbed()
@@ -51,7 +40,7 @@ client.on("message", message => {
     message.delete().catch(O_o=>{}); 
     message.channel.send(sayMessage).catch(O_o=>{message.reply('Тут должен быть текст но его нету');});
   	} else if (command === "clear") {
-  		if(!message.member.roles.some(r=>[rule.st_moder, rule.ml_admin, rule.st_admin, rule.creator].includes(r.id)) && !creators.includes(message.author.id))
+  		if(!message.member.roles.some(r=>[rule.st_moder, rule.ml_admin, rule.st_admin, rule.meow].includes(r.id)) && !creators.includes(message.author.id))
   			return message.reply("Права у MeowGMS!");
 		message.delete();
 		let content = message.content.slice(process.env.PREFIX.length + 8);
@@ -95,7 +84,7 @@ client.on("message", message => {
 		if (creators.includes(message.author.id)) {
 			cmds = cmds + `\`${process.env.PREFIX}скажи [текст]\` - написать сообщение от имени бота.\n`;
 		}
-		if(message.member.roles.some(r=>[rule.st_moder, rule.ml_admin, rule.st_admin, rule.creator].includes(r.id)) || creators.includes(message.author.id)) {
+		if(message.member.roles.some(r=>[rule.st_moder, rule.ml_admin, rule.st_admin, rule.meow].includes(r.id)) || creators.includes(message.author.id)) {
 			cmds = cmds + `\`${process.env.PREFIX}очистить [кол-во]\` - очистить определённое кол-во сообщений.\n`;
 		}
 		cmds = cmds + `\`${process.env.PREFIX}аватарка [упоминание человека]\` - узнать аватарку.\n`;
