@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const rule = {st_admin: "371003132983115777", ml_admin: "371003796454899712", st_moder: "394505884266528788", ml_moder: "371003753781788684", owner: "401720942818099200"}
+const rule = {"owner: "401720942818099200"}
 const creators = ['207821802431315968', '356456653916340224']
 
 
@@ -21,7 +21,7 @@ client.on("guildMemberAdd", member => {
   member.send({embed});
 });
 client.on("message", message => {
-	if (message.channel.id == '409054265626329105') {
+	if (message.channel.id == '411516585887531019') {
       	message.react("👍");
       	message.react("👎");
 	}
@@ -46,7 +46,7 @@ client.on("message", message => {
     message.delete().catch(O_o=>{}); 
     message.channel.send(sayMessage).catch(O_o=>{message.reply('Что-то пошло не так');});
   	} else if (command === "clear") {
-  		if(!message.member.roles.some(r=>[rule.st_moder, rule.ml_admin, rule.st_admin, rule.owner].includes(r.id)))
+  		if(!message.member.roles.some(r=>[rule.owner].includes(r.id)))
   			return message.reply("Права есть?!");
 		message.delete();
 		let content = message.content.slice(process.env.PREFIX.length + 8);
