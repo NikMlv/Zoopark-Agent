@@ -72,9 +72,9 @@ client.on("message", message => {
 		message.reply({embed: {
 			color: 16711680,
 			title: "Ошибка",
-			description: `ЭЭЭЭ! Комманды \`${command}\` нету! Алло, ты шо, ебобо?`,
+			description: `Комманды \`${command}\` нету!`,
 			footer: {
-			  	text: "JonedVoice",
+			  	text: "ZOOPARK",
 		  	},
 		}})
 	}
