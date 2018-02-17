@@ -18,7 +18,7 @@ client.on("guildMemberAdd", member => {
   member.send({embed});
 });
 client.on("message", message => {
-	if (message.channel.id == '<414065767844151304') {
+	if (message.channel.id == '36125913962984243>') {
       	message.react("👍");
       	message.react("👎");
 	}
