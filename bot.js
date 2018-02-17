@@ -1,7 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const rule = {st_admin: "371003132983115777", ml_admin: "371003796454899712", st_moder: "394505884266528788", ml_moder: "371003753781788684", creator: "406442606273363990"}
-const creators = ['207821802431315968', '168255014282854401']
+const creators = ['356456653916340224', '168255014282854401']
 
 
 function declOfNum(number, titles) {  
@@ -13,7 +12,7 @@ function declOfNum(number, titles) {
 client.on("guildMemberAdd", member => {
   const embed = new Discord.RichEmbed()
   .setColor("#ee83ac")
-  .setDescription("Текста еще нет .")
+  .setDescription("Приветствую тебя на сервере ZOOPARK!\nЭто официальный дискорд-сервер **Happy Wolf'a**.\n\nПожалуйста, прочти и соблюдай правила, которые ты сможешь найти в **#rules**, как и описание ролей сервера.\nОбязательно проверяй #updates, ведь там можно найти много чего интерсного.\nГлавное будь дружелюбным по отношению к другим участникам, а также соблюдай правила, и тогда никаких проблем не будет.\n\nУдачи!")
   .setFooter("ZOOPARK")
   .setTimestamp()
   member.send({embed});
@@ -33,7 +32,7 @@ client.on("message", message => {
 	if (command == 'Dmtest') {
 	  const embed = new Discord.RichEmbed()
 	  .setColor("#ee83ac")
-	  .setDescription("Текста нету еще .")
+	  .setDescription("Приветствую тебя на сервере ZOOPARK!\nЭто официальный дискорд-сервер **Happy Wolf'a**.\n\nПожалуйста, прочти и соблюдай правила, которые ты сможешь найти в **#rules**, как и описание ролей сервера.\nОбязательно проверяй #updates, ведь там можно найти много чего интерсного.\nГлавное будь дружелюбным по отношению к другим участникам, а также соблюдай правила, и тогда никаких проблем не будет.\n\nУдачи!")
 	  .setFooter("ZOOPARK")
 	  .setTimestamp()
 	  message.author.send({embed});
