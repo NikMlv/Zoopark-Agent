@@ -16,7 +16,7 @@ client.on("message", message => {
 	const args = message.content.slice(process.env.PREFIX.length).trim().split(/ +/g);
   	const command = args.shift().toLowerCase();
 
-	if (command == 'Лс проверка') {
+	if (command == 'Dmtest') {
 	  const embed = new Discord.RichEmbed()
 	  .setColor(65280)
 	  .setDescription("Тут должно что-то быть.")
