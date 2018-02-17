@@ -1,6 +1,5 @@
 nst Discord = require('discord.js');
 const client = new Discord.Client();
-const rule = {st_admin: "371003132983115777", ml_admin: "371003796454899712", st_moder: "394505884266528788", ml_moder: "371003753781788684", meow: "401720942818099200"}
 const creators = ['207821802431315968', '401720942818099200']
 
 
