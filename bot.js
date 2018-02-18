@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const creators = ['207821802431315968', '325390946583838720','356456653916340224];
+const creators = ['207821802431315968','325390946583838720','356456653916340224];
 
 client.on("guildMemberAdd", member => {
   const embed = new Discord.RichEmbed()
@@ -30,7 +30,7 @@ client.on("message", message => {
 	  message.author.send({embed});
 	}
 
-	if(command === "say" && message.author.id == "207821802431315968") {
+	if(command === "say" && (creators.includes(message.author.id)) {
     const sayMessage = args.join(" ");
     message.delete().catch(O_o=>{}); 
     message.channel.send(sayMessage);
