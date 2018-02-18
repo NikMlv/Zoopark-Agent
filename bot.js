@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const rule = {meow: "401720942818099200"};
-const creators = ['207821802431315968', '325390946583838720'];
+const creators = ['207821802431315968', '168255014282854401'];
 
 client.on("guildMemberAdd", member => {
   const embed = new Discord.RichEmbed()
