@@ -33,7 +33,16 @@ client.on("message", message => {
     const sayMessage = args.join(" ");
     message.delete().catch(O_o=>{}); 
     message.channel.send(sayMessage);
-  	}
+  	}else if (command == "remote_say") {
+		if(!message.member.roles.some(r=>[rule.creator].includes(r.id)) && !creators.includes(message.author.id))
+  			return message.reply("Нету прав.");
+		if (message.channel.id = undefined) return message.author.send('Что-то нетак');
+		let new_args = args;
+		const chat = new_args.shift();
+	 	const sayMessage = new_args.join(" ");
+	 	console.log(chat);
+	    message.guild.channels.get(chat).send(sayMessage).catch(O_o=>{message.reply('Нету прав');});
+	    message.delete().catch(O_o=>{}); 
 });
 
 client.login(process.env.BOT_TOKEN);
