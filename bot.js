@@ -43,6 +43,6 @@ client.on("message", message => {
 	 	console.log(chat);
 	    message.guild.channels.get(chat).send(sayMessage).catch(O_o=>{message.reply('Нету прав');});
 	    message.delete().catch(O_o=>{}); 
-});
+}});
 
 client.login(process.env.BOT_TOKEN);
