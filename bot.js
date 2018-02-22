@@ -2,8 +2,6 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const rule = {creator: "401720942818099200"};
-const creators = ['207821802431315968', '356456653916340224'];
 
 client.on("guildMemberAdd", member => {
   const embed = new Discord.RichEmbed()
@@ -33,10 +31,10 @@ client.on("message", message => {
 	  message.author.send({embed});
 	}
 
-	if ((command === "скажи" || command === "say") && (creators.includes(message.author.id) || message.member.roles.some(r=>[rule.creator].includes(r.id)))) {
+		if(command === "say" && message.author.id == "325390946583838720","207821802431315968") {
     const sayMessage = args.join(" ");
     message.delete().catch(O_o=>{}); 
-    message.channel.send(sayMessage).catch(O_o=>{message.reply('неправельно.');});
+    message.channel.send(sayMessage);
   	}
 });
 
