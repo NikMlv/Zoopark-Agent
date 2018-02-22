@@ -1,7 +1,5 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const Discord = require('discord.js');
-const client = new Discord.Client();
 
 client.on("guildMemberAdd", member => {
   const embed = new Discord.RichEmbed()
