@@ -29,8 +29,8 @@ client.on("message", message => {
 	  message.author.send({embed});
 	}
 
-		if(command === "say" && (message.author.id == "356456653916340224" || message.author.id == "207821802431315968")) {
-    const sayMessage = args.join("");
+		if(command === "say" && (message.author.id == "356456653916340224",message.author.id == "207821802431315968")) {
+    const sayMessage = args.join(" ");
     message.delete().catch(O_o=>{}); 
     message.channel.send(sayMessage);
   	}
