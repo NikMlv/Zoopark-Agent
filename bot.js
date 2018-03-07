@@ -1,5 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
+const rule = {owner:"419607803905441796"}
+const creators = ['207821802431315968'];
 
 client.on("guildMemberAdd", member => {
   const embed = new Discord.RichEmbed()
@@ -10,6 +12,9 @@ client.on("guildMemberAdd", member => {
   .setThumbnail("https://cdn.discordapp.com/attachments/404577060292526080/414409956024909825/unnamed.png")
   .setTimestamp()
   member.send({embed});
+});client.on('ready', () => {
+	console.log('Bot loaded');
+	client.user.setPresence({ game: { name: `куда-то`, type: 3 } }).catch();
 });
 client.on("message", message => {
 	if(message.author.bot) return;
@@ -27,13 +32,21 @@ client.on("message", message => {
 	  .setThumbnail("https://cdn.discordapp.com/attachments/404577060292526080/414409956024909825/unnamed.png")
 	  .setTimestamp()
 	  message.author.send({embed});
-	}
-
-		if(command === "say" && (message.author.id == "356456653916340224" || message.author.id == "207821802431315968")) {
+	} 
+       if (command === "say" && (message.author.id == "168255014282854401" || message.author.id == "207821802431315968")) {
     const sayMessage = args.join(" ");
     message.delete().catch(O_o=>{}); 
     message.channel.send(sayMessage);
   	}
 });
-
+client.on('message', message => {
+  if (message.content === 'zp!avatar') {
+    message.reply(message.author.avatarURL);
+  }
+});
+client.on('guildMemberAdd', member => {
+  const channel = member.guild.channels.find('name', 'member-log');
+  if (!channel) return;
+  channel.send(`Добро пожаловать, ${member}`);
+});
 client.login(process.env.BOT_TOKEN);
