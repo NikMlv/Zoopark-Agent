@@ -75,11 +75,9 @@ client.on("message", message => {
             embed
         });
     }
-    if (command === "channel-info" && (message.author.id == "356456653916340224")) {
+    if (command === "channel" && (message.author.id == "356456653916340224")) {
         message.delete().catch(O_o => {});
-        const embed = new Discord.RichEmbed()
-            .createdAt()
-        message.channel.send("channel-info");
+        message.reply(message.author.avatarURL);
     }
 });
 client.on('message', message => {
