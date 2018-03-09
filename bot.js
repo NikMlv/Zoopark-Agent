@@ -81,7 +81,7 @@ client.on("message", message => {
             .setColor(32768)
             .setTitle("Объявление")
             .setDescription("")
-            .createdAt();
+            .createdAt()
             .setFooter("ZOOPARK")
             .setTimestamp()
         message.channel.send({
