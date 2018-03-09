@@ -95,12 +95,11 @@ client.on('message', message => {
         verified = "Нет"
         if (message.author.verified == true) {verified = "Да"}
         const embed = new Discord.RichEmbed()
-            .setColor(32768)
+            .setColor(16772322)
             .setTitle(username)
             .addField("ID пользователя:", message.author.id, true)
             .addField("Полный никнейм: ", message.author.tag, true)
             .addField("Создан: ", message.author.createdAt, true)  
-            //.addField("Аватарка: ",message.author.avatarURL, true)
             .addField("Аккаунт верифицирован? ", verified, true)
             .setThumbnail(avatar)
             .setFooter("ZOOPARK")
