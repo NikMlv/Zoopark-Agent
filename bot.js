@@ -90,8 +90,15 @@ client.on('message', message => {
 client.on('message', message => {
     if (message.content === 'zp!id') {
         message.delete().catch(O_o => {});
-        message.reply(idtext);
-        message.reply(message.author.id);
+        const embed = new Discord.RichEmbed()
+            .setColor(32768)
+            .setTitle("Объявление")
+            .setDescription("Ваш ID: ", message.author.id)
+            .setFooter("ZOOPARK")
+            .setTimestamp()
+        message.channel.send({
+            embed
+        });
     }
 });
 client.on('guildMemberAdd', member => {
