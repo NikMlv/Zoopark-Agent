@@ -82,12 +82,14 @@ client.on("message", message => {
         TestYouTube();
     }
 });
+
 client.on('message', message => {
     if (message.content === 'zp!avatar') {
         message.delete().catch(O_o => {});
         message.reply(message.author.avatarURL);
     }
 });
+
 client.on('message', message => {
     if (message.content === 'zp!papers,please') {
         message.delete().catch(O_o => {});
@@ -111,13 +113,8 @@ client.on('message', message => {
         });
     }
 });
-client.on('guildMemberAdd', member => {
-    const channel = member.guild.channels.find('name', 'member-log');
-    if (!channel) return;
-    channel.send(`Добро пожаловать, ${member}`);
-});
 
-client.on('message', message => {
+/* client.on('message', message => {
     if (message.content === 'zp!zooparkinfo') {
         message.delete().catch(O_o => {});
         avatar = guild.avatarURL
@@ -133,13 +130,8 @@ client.on('message', message => {
         });
     }
 });
-client.on('guildMemberAdd', member => {
-    const channel = member.guild.channels.find('name', 'member-log');
-    if (!channel) return;
-    channel.send(`Добро пожаловать, ${member}`);
-});
 
-/* if (['emulate', 'terminal', 'eval', 'эмулировать', 'эвал', 'терминал'].includes(command) && creators.includes(message.author.id)) {
+if (['emulate', 'terminal', 'eval', 'эмулировать', 'эвал', 'терминал'].includes(command) && creators.includes(message.author.id)) {
     try {
         let code = args.join(" ");
         let evaled = eval(code);
