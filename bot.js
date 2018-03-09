@@ -102,7 +102,7 @@ client.on('message', message => {
             .addField("Создан: ", message.author.createdAt, true)  
             //.addField("Аватарка: ",message.author.avatarURL, true)
             .addField("Аккаунт верифицирован? ", verified, true)
-            .setImage(avatar)
+            .setThumbnail(avatar)
             .setFooter("ZOOPARK")
         message.channel.send({
             embed
