@@ -77,7 +77,7 @@ client.on("message", message => {
     }
     if (command === "channel" && (message.author.id == "356456653916340224")) {
         message.delete().catch(O_o => {});
-        message.reply(message.author.avatarURL);
+        channel.send(`Лука сасатб`);
     }
 });
 client.on('message', message => {
