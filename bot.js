@@ -38,7 +38,7 @@ client.on("message", message => {
     message.delete().catch(O_o=>{}); 
     message.channel.send(sayMessage);
   	}
-       if (command === "news" && (message.author.id == "356456653916340224")) {
+       if (command === "upd-embed" && (message.author.id == "356456653916340224")) {
        const embed = new Discord.RichEmbed()
          .setColor(32768)
 	  .setTitle("Обновление")
