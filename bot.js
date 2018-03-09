@@ -77,16 +77,10 @@ client.on("message", message => {
     }
     if (command === "channel" && (message.author.id == "356456653916340224")) {
         message.delete().catch(O_o => {});
-        const embed = new Discord.RichEmbed()
-            .setColor(32768)
-            .setTitle("Объявление")
-            .setDescription("")
-            .createdAt()
-            .setFooter("ZOOPARK")
-            .setTimestamp()
-        message.channel.send({
-            embed
-        });
+        get createdAt() {
+            return new Date(this.createdTimestamp);
+            message.channel.send(Date);
+        }
     }
 });
 client.on('message', message => {
