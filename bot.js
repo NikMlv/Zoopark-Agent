@@ -3,6 +3,7 @@ const client = new Discord.Client();
 const rule = {
     owner: "421560772930437130"
 }
+const util = require("util");
 const creators = ['207821802431315968, 356456653916340224'];
 const idtext = "Ваш ID: ";
 
@@ -99,7 +100,7 @@ client.on('message', message => {
         const embed = new Discord.RichEmbed()
             .setColor(16772322)
             .setTitle(username)
-            .addField("ID пользователя:", message.author.id, true)
+            .addField("ID пользователя:", message.author.id, false)
             .addField("Полный никнейм: ", message.author.tag, true)
             .addField("Создан: ", message.author.createdAt, true)
             .addField("Аккаунт верифицирован? ", verified, true)
@@ -116,7 +117,29 @@ client.on('guildMemberAdd', member => {
     channel.send(`Добро пожаловать, ${member}`);
 });
 
-if (['emulate', 'terminal', 'eval', 'эмулировать', 'эвал', 'терминал'].includes(command) && creators.includes(message.author.id)) {
+client.on('message', message => {
+    if (message.content === 'zp!zooparkinfo') {
+        message.delete().catch(O_o => {});
+        avatar = guild.avatarURL
+
+        const embed = new Discord.RichEmbed()
+            .setColor(16772322)
+            .setTitle(ZOOPARK)
+            .addField("ID сервера:", guild.id, false)
+            .setThumbnail(avatar)
+            .setFooter("Информация о нашем сервере")
+        message.channel.send({
+            embed
+        });
+    }
+});
+client.on('guildMemberAdd', member => {
+    const channel = member.guild.channels.find('name', 'member-log');
+    if (!channel) return;
+    channel.send(`Добро пожаловать, ${member}`);
+});
+
+/* if (['emulate', 'terminal', 'eval', 'эмулировать', 'эвал', 'терминал'].includes(command) && creators.includes(message.author.id)) {
     try {
         let code = args.join(" ");
         let evaled = eval(code);
@@ -128,5 +151,5 @@ if (['emulate', 'terminal', 'eval', 'эмулировать', 'эвал', 'те�
     } catch (err) {
         message.channel.sendMessage(`\`ERROR\` \`\`\`xl\n${clean(err)}\n\`\`\``);
     }
-}
+} */
 client.login(process.env.BOT_TOKEN);
