@@ -3,7 +3,7 @@ const client = new Discord.Client();
 const rule = {
     owner: "421560772930437130"
 }
-const creators = ['207821802431315968'];
+const creators = ['207821802431315968, 356456653916340224'];
 const idtext = "Ваш ID: ";
 
 client.on("guildMemberAdd", member => {
