@@ -38,16 +38,6 @@ client.on("message", message => {
     message.delete().catch(O_o=>{}); 
     message.channel.send(sayMessage);
   	}
-       if (command === "upd-embed" && (message.author.id == "356456653916340224")) {	       
-	message.delete().catch(O_o=>{}); 
-        const embed = new Discord.RichEmbed()
-          .setColor(32768)
-	  .setTitle("Обновление")
-	  .setDescription("Из-за неактивности удалён **daun-oldfag-chat**. В будущем он скорее всего вернётся в виде обычного чата для олдфагов, причем в основных чатах будет наблюдаться большой актив.")
-	  .setFooter("ZOOPARK")
-	  .setTimestamp()
-	  message.channel.send({embed});
-       }
 client.on('message', message => {
   if (message.content === 'zp!avatar') {
     message.reply(message.author.avatarURL);
