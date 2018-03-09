@@ -99,7 +99,7 @@ client.on('message', message => {
             .addField("ID пользователя:", message.author.id, true)
             .addField("Полный никнейм: ", message.author.tag, true)
             .addField("Создан: ", message.author.createdAt, true)  
-            .addField("Клиент: ",message.author.client, true)
+            .addField("Аватарка: ",message.author.avatarURL, true)
             .addField("Аккаунт верифицирован? ", verified, true)
             .setFooter("ZOOPARK")
         message.channel.send({
