@@ -92,14 +92,14 @@ client.on('message', message => {
         message.delete().catch(O_o => {});
         username = message.author.username
         verified = "Нет"
-        if (message.author.verified == true) { verified = "Да" }
+        if (message.author.verified == true) {verified = "Да"}
         const embed = new Discord.RichEmbed()
             .setColor(32768)
             .setTitle(username)
             .addField("ID пользователя:", message.author.id, true)
             .addField("Создан: ", message.author.createdAt, true) 
             .addField("Полный никнейм: ", message.author.tag, true) 
-            .addField("Аккаунт верифицирован? ", verifed, true)
+            .addField("Аккаунт верифицирован? ", verified, true)
             .setFooter("ZOOPARK")
         message.channel.send({
             embed
