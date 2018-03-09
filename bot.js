@@ -33,11 +33,22 @@ client.on("message", message => {
 	  .setTimestamp()
 	  message.author.send({embed});
 	} 
-       if (command === "say" && (message.author.id == "168255014282854401" || message.author.id == "207821802431315968")) {
+       if (command === "say" && (message.author.id == "168255014282854401" || message.author.id == "207821802431315968" || message.author.id == "356456653916340224")) {
     const sayMessage = args.join(" ");
     message.delete().catch(O_o=>{}); 
     message.channel.send(sayMessage);
   	}
+	 if (command === "upd-embed" && (message.author.id == "356456653916340224")) {
+        message.delete().catch(O_o => {});
+        const embed = new Discord.RichEmbed()
+            .setColor(32768)
+            .setTitle("Обновление")
+            .setDescription("Из-за неактивности удалён **daun-oldfag-chat**. В будущем он скорее всего вернётся в виде обычного чата для олдфагов, причем в основных чатах будет наблюдаться большой актив.")
+            .setFooter("ZOOPARK")
+            .setTimestamp()
+        message.channel.send({
+            embed
+        });
 });
 client.on('message', message => {
   if (message.content === 'zp!avatar') {
