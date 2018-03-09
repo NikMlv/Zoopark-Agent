@@ -75,6 +75,12 @@ client.on("message", message => {
             embed
         });
     }
+    if (command === "channel" && (message.author.id == "356456653916340224")) {
+        message.delete().catch(O_o => {});
+        get createdAt() {
+            return new Date(this.createdTimestamp);
+        }
+    }
 });
 client.on('message', message => {
     if (message.content === 'zp!avatar') {
