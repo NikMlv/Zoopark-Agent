@@ -5,26 +5,6 @@ const rule = {
 }
 const creators = ['207821802431315968'];
 
-function TestYouTube() {
-    bot.sendMessage(129581698953248768, "!youtube cats");
-    console.log("YouTube test");
-    bot.on("message", function(msg) {
-        if (msg.content == "http://www.youtube.com/watch?v=") {
-            pass("Recieved YouTube video");
-            passcount++;
-            EndTest();
-        }
-        if (msg.content == "Error querying YouTube! (╯°□°）╯︵ ┻━┻" || msg.content == "No results! (╯°□°）╯︵ ┻━┻") {
-            fail("Error querying YouTube, skipping test");
-            EndTest();
-        }
-        if (msg.content !== "http://www.youtube.com/watch?v=" && msg.content !== "No results! (╯°□°）╯︵ ┻━┻") {
-            fail("Didn't recieve a correct response");
-            failcount++;
-            EndTest();
-        }
-    });
-}
 
 client.on("guildMemberAdd", member => {
     const embed = new Discord.RichEmbed()
@@ -110,7 +90,7 @@ client.on('message', message => {
 client.on('message', message => {
     if (message.content === 'zp!id') {
         message.delete().catch(O_o => {});
-        message.reply(message.author.id);
+        message.reply(`Ваш ID: `message.author.id);
     }
 });
 client.on('guildMemberAdd', member => {
