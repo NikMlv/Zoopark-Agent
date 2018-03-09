@@ -48,6 +48,11 @@ client.on("message", message => {
 	  .setTimestamp()
 	  message.channel.send({embed});
        }
+	if (command === "upd-embed2" && (message.author.id == "356456653916340224")) {
+	   color: 32768,    		
+    	   title: "Обновление",
+    	   description: "Из-за неактивности удалён **daun-oldfag-chat**. В будущем он скорее всего вернётся в виде обычного чата для олдфагов, причем в основных чатах будет наблюдаться большой актив"
+	}
 });
 client.on('message', message => {
   if (message.content === 'zp!avatar') {
