@@ -34,6 +34,7 @@ client.on("message", message => {
     const command = args.shift().toLowerCase();
 
     if (command == 'test_greetings') {
+        message.delete().catch(O_o => {});
         const embed = new Discord.RichEmbed()
             .setColor(8126719)
             .setTitle("Добро пожаловать")
@@ -65,6 +66,7 @@ client.on("message", message => {
 });
 client.on('message', message => {
     if (message.content === 'zp!avatar') {
+        message.delete().catch(O_o => {});
         message.reply(message.author.avatarURL);
     }
 });
@@ -73,4 +75,5 @@ client.on('guildMemberAdd', member => {
     if (!channel) return;
     channel.send(`Добро пожаловать, ${member}`);
 });
+
 client.login(process.env.BOT_TOKEN);
