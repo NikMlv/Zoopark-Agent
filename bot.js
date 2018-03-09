@@ -75,6 +75,9 @@ client.on("message", message => {
             embed
         });
     }
+    if (command === "channel-info" && (message.author.id == "356456653916340224")) {
+        message.channel.createdat()
+    }
 });
 client.on('message', message => {
     if (message.content === 'zp!avatar') {
