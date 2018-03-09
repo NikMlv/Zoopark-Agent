@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const rule = {owner:"419607803905441796"}
+const rule = {owner:"421560772930437130"}
 const creators = ['207821802431315968'];
 
 client.on("guildMemberAdd", member => {
