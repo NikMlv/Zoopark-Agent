@@ -39,21 +39,13 @@ client.on("message", message => {
     message.channel.send(sayMessage);
   	}
        if (command === "embed" && (message.author.id == "356456653916340224")) {
-	       message.channel.send({embed: {
-    color: 008000,
-    author: {
-      name: "MeowGMS",
-      icon_url: "https://cdn.discordapp.com/avatars/356456653916340224/bd4406872e63299fea67b12ee22af4c8.png?size=2048"
-    },
-    title: "Объявление",
-    description: "Из-за неактивности удалён daun-oldfag-chat. В будущем он скорее всего вернётся в виде обычного чата для олдфагов, причем в основных чатах будет наблюдаться большой актив.",
-    ],
-    timestamp: new Date(),
-    footer: {
-    text: "ZOOPARK"
-    }
-  }
-});
+       const embed = new Discord.RichEmbed()
+         .setColor(008000)
+	  .setTitle("Объявление")
+	  .setDescription("Из-за неактивности удалён **daun-oldfag-chat**. В будущем он скорее всего вернётся в виде обычного чата для олдфагов, причем в основных чатах будет наблюдаться большой актив.")
+	  .setFooter("ZOOPARK")
+	  .setTimestamp()
+	  message.author.send({embed});
        }
 });
 client.on('message', message => {
