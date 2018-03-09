@@ -88,19 +88,17 @@ client.on('message', message => {
     }
 });
 client.on('message', message => {
-    if (message.content === 'zp!id') {
+    if (message.content === 'zp!info') {
         message.delete().catch(O_o => {});
         username = message.author.username
-        avatarUrl = message.author.displayAvatarURL
         verified = "Нет"
         if (message.author.verified == true) {verified = "Да"}
         const embed = new Discord.RichEmbed()
             .setColor(32768)
             .setTitle(username)
-            .setDescription(avatarURl)
             .addField("ID пользователя:", message.author.id, true)
             .addField("Полный никнейм: ", message.author.tag, true)
-            .addField("Создан: ", message.author.createdAt, true)  
+            .addField("Создан: ", message.author.createdTimestamp, true)  
             .addField("Аккаунт верифицирован? ", verified, true)
             .setFooter("ZOOPARK")
         message.channel.send({
