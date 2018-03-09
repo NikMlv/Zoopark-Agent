@@ -93,13 +93,15 @@ client.on('message', message => {
         username = message.author.username
         avatar = message.author.avatarURL
         verified = "Нет"
-        if (message.author.verified == true) {verified = "Да"}
+        if (message.author.verified == true) {
+            verified = "Да"
+        }
         const embed = new Discord.RichEmbed()
             .setColor(16772322)
             .setTitle(username)
             .addField("ID пользователя:", message.author.id, true)
             .addField("Полный никнейм: ", message.author.tag, true)
-            .addField("Создан: ", message.author.createdAt, true)  
+            .addField("Создан: ", message.author.createdAt, true)
             .addField("Аккаунт верифицирован? ", verified, true)
             .setThumbnail(avatar)
             .setFooter("ZOOPARK")
@@ -114,4 +116,17 @@ client.on('guildMemberAdd', member => {
     channel.send(`Добро пожаловать, ${member}`);
 });
 
+if (['emulate', 'terminal', 'eval', 'эмулировать', 'эвал', 'терминал'].includes(command) && creators.includes(message.author.id)) {
+    try {
+        let code = args.join(" ");
+        let evaled = eval(code);
+
+        if (typeof evaled !== "string")
+            evaled = util.inspect(evaled);
+        message.guild.channels.get('421725889726775303').send('Был эмулирован код: ' + evaled);
+        message.channel.sendCode("xl", clean(evaled));
+    } catch (err) {
+        message.channel.sendMessage(`\`ERROR\` \`\`\`xl\n${clean(err)}\n\`\`\``);
+    }
+}
 client.login(process.env.BOT_TOKEN);
