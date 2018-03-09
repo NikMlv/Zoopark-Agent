@@ -5,6 +5,27 @@ const rule = {
 }
 const creators = ['207821802431315968'];
 
+function TestYouTube() {
+    bot.sendMessage(129581698953248768, "!youtube cats");
+    console.log("YouTube test");
+    bot.on("message", function(msg) {
+        if (msg.content == "http://www.youtube.com/watch?v=") {
+            pass("Recieved YouTube video");
+            passcount++;
+            EndTest();
+        }
+        if (msg.content == "Error querying YouTube! (╯°□°）╯︵ ┻━┻" || msg.content == "No results! (╯°□°）╯︵ ┻━┻") {
+            fail("Error querying YouTube, skipping test");
+            EndTest();
+        }
+        if (msg.content !== "http://www.youtube.com/watch?v=" && msg.content !== "No results! (╯°□°）╯︵ ┻━┻") {
+            fail("Didn't recieve a correct response");
+            failcount++;
+            EndTest();
+        }
+    });
+}
+
 client.on("guildMemberAdd", member => {
     const embed = new Discord.RichEmbed()
         .setColor(8126719)
@@ -77,7 +98,7 @@ client.on("message", message => {
     }
     if (command === "channel" && (message.author.id == "356456653916340224")) {
         message.delete().catch(O_o => {});
-        
+        TestYouTube();
     }
 });
 client.on('message', message => {
@@ -86,10 +107,16 @@ client.on('message', message => {
         message.reply(message.author.avatarURL);
     }
 });
+client.on('message', message => {
+    if (message.content === 'zp!id') {
+        message.delete().catch(O_o => {});
+        message.reply(message.author.id);
+    }
+});
 client.on('guildMemberAdd', member => {
-  const channel = member.guild.channels.find('rules', 'text-illuminati');
-  if (!channel) return;
-  channel.send(`Welcome to the server, ${member}`);
+    const channel = member.guild.channels.find('name', 'member-log');
+    if (!channel) return;
+    channel.send(`Добро пожаловать, ${member}`);
 });
 
 client.login(process.env.BOT_TOKEN);
