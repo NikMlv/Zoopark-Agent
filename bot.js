@@ -90,12 +90,13 @@ client.on('message', message => {
 client.on('message', message => {
     if (message.content === 'zp!id') {
         message.delete().catch(O_o => {});
+        username = message.author.username
         const embed = new Discord.RichEmbed()
             .setColor(32768)
-            .setTitle("Информация о ${author}")
-            .addField("ID пользователя:", message.author.id,true)
+            .setTitle(username)
+            .addField("ID пользователя:", message.author.id, true)
+            .addField("Создан: ", message.author.createdAt, true)
             .setFooter("ZOOPARK")
-            .setTimestamp()
         message.channel.send({
             embed
         });
