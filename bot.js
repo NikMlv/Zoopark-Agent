@@ -4,7 +4,7 @@ const rule = {
     owner: "421560772930437130"
 }
 const creators = ['207821802431315968'];
-
+const idtext = "Ваш ID: ";
 
 client.on("guildMemberAdd", member => {
     const embed = new Discord.RichEmbed()
@@ -90,7 +90,7 @@ client.on('message', message => {
 client.on('message', message => {
     if (message.content === 'zp!id') {
         message.delete().catch(O_o => {});
-        message.reply(`Ваш ID: `message.author.id);
+        message.reply(idtext,message.author.id);
     }
 });
 client.on('guildMemberAdd', member => {
