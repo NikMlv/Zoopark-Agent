@@ -97,9 +97,9 @@ client.on('message', message => {
             .setColor(32768)
             .setTitle(username)
             .addField("ID пользователя:", message.author.id, true)
+            .addField("Полный никнейм: ", message.author.tag, true)
             .addField("Создан: ", message.author.createdAt, true)  
             .addField("Аккаунт верифицирован? ", verified, true)
-            .addField("Полный никнейм: ", message.author.tag, true)
             .setFooter("ZOOPARK")
         message.channel.send({
             embed
