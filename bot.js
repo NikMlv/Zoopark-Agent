@@ -96,6 +96,7 @@ client.on('message', message => {
         const embed = new Discord.RichEmbed()
             .setColor(32768)
             .setTitle(username)
+            .setThumbNail(message.author.displayAvatarURL)
             .addField("ID пользователя:", message.author.id, true)
             .addField("Полный никнейм: ", message.author.tag, true)
             .addField("Создан: ", message.author.createdAt, true)  
