@@ -91,13 +91,13 @@ client.on('message', message => {
     if (message.content === 'zp!id') {
         message.delete().catch(O_o => {});
         username = message.author.username
-        avatarUrl = message.author.avatarURL
+        avatarUrl = message.author.displayAvatarURL
         verified = "Нет"
         if (message.author.verified == true) {verified = "Да"}
         const embed = new Discord.RichEmbed()
             .setColor(32768)
             .setTitle(username)
-            .setThumbNail(avatarUrl)
+            .setDescription(avatarURl)
             .addField("ID пользователя:", message.author.id, true)
             .addField("Полный никнейм: ", message.author.tag, true)
             .addField("Создан: ", message.author.createdAt, true)  
