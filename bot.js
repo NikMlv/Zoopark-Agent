@@ -42,8 +42,8 @@ client.on("message", message => {
 	       message.channel.send({embed: {
     color: 008000,
     author: {
-      name: client.user.username,
-      icon_url: client.user.avatarURL
+      name: "MeowGMS",
+      icon_url: "https://cdn.discordapp.com/avatars/356456653916340224/bd4406872e63299fea67b12ee22af4c8.png?size=2048"
     },
     title: "Объявление",
     description: "Из-за неактивности удалён daun-oldfag-chat. В будущем он скорее всего вернётся в виде обычного чата для олдфагов, причем в основных чатах будет наблюдаться большой актив.",
