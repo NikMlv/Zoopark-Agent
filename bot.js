@@ -63,6 +63,18 @@ client.on("message", message => {
             embed
         });
     }
+    if (command === "news-embed" && (message.author.id == "356456653916340224")) {
+        message.delete().catch(O_o => {});
+        const embed = new Discord.RichEmbed()
+            .setColor(32768)
+            .setTitle("Объявление")
+            .setDescription("")
+            .setFooter("ZOOPARK")
+            .setTimestamp()
+        message.channel.send({
+            embed
+        });
+    }
 });
 client.on('message', message => {
     if (message.content === 'zp!avatar') {
