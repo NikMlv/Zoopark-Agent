@@ -90,7 +90,8 @@ client.on('message', message => {
 client.on('message', message => {
     if (message.content === 'zp!id') {
         message.delete().catch(O_o => {});
-        message.reply(idtext,message.author.id);
+        message.reply(idtext);
+        message.reply(message.author.id);
     }
 });
 client.on('guildMemberAdd', member => {
