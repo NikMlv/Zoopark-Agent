@@ -88,7 +88,7 @@ client.on('message', message => {
     }
 });
 client.on('message', message => {
-    if (message.content === 'zp!info') {
+    if (message.content === 'zp!papers,please') {
         message.delete().catch(O_o => {});
         username = message.author.username
         avatar = message.author.avatarURL
