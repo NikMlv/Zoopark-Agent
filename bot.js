@@ -91,6 +91,7 @@ client.on('message', message => {
     if (message.content === 'zp!info') {
         message.delete().catch(O_o => {});
         username = message.author.username
+        avatar = message.author.avatarURL
         verified = "Нет"
         if (message.author.verified == true) {verified = "Да"}
         const embed = new Discord.RichEmbed()
@@ -99,8 +100,9 @@ client.on('message', message => {
             .addField("ID пользователя:", message.author.id, true)
             .addField("Полный никнейм: ", message.author.tag, true)
             .addField("Создан: ", message.author.createdAt, true)  
-            .addField("Аватарка: ",message.author.avatarURL, true)
+            //.addField("Аватарка: ",message.author.avatarURL, true)
             .addField("Аккаунт верифицирован? ", verified, true)
+            .setImage(avatar)
             .setFooter("ZOOPARK")
         message.channel.send({
             embed
