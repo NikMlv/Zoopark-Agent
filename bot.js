@@ -79,9 +79,7 @@ client.on("message", message => {
         message.delete().catch(O_o => {});
         const embed = new Discord.RichEmbed()
             .createdAt()
-        message.channel.send({
-            embed
-        });
+        message.channel.send("channel-info");
     }
 });
 client.on('message', message => {
