@@ -92,9 +92,8 @@ client.on('message', message => {
         message.delete().catch(O_o => {});
         const embed = new Discord.RichEmbed()
             .setColor(32768)
-            .setTitle("Объявление")
-            .setDescription("Ваш ID: ")
-            .addField(message.author.id, "мияу",true)
+            .setTitle("Информация о ${author}")
+            .addField("ID пользователя:", message.author.id,true)
             .setFooter("ZOOPARK")
             .setTimestamp()
         message.channel.send({
