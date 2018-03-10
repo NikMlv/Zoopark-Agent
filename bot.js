@@ -116,7 +116,7 @@ client.on('message', message => {
     if (message.content === 'zp!zoopark') {
         message.delete().catch(O_o => {});
         //servername = message.author.name
-        avatar = message.guild.avatarURL
+        avatar = message.guild.iconURL
         //verified = "Нет"
         const embed = new Discord.RichEmbed()
             .setColor(16772322)
