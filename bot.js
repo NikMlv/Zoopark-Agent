@@ -123,8 +123,8 @@ client.on('message', message => {
             .setTitle("Информация о сервере ZOOPARK")
             //.addField("ID пользователя:", message.gulld.id, false)
             //.addField("Создан: ", message.gulld.createdAt, false)
-            //.setThumbnail(avatar)
-            //.setFooter("ZOOPARK")
+            .setThumbnail(avatar)
+            .setFooter("ZOOPARK")
         message.channel.send({
          embed
        });
