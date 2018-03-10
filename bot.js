@@ -75,19 +75,7 @@ client.on("message", message => {
             embed
         });
     }
-    if (command === "purge") {
 
-        const deleteCount = parseInt(args[0], 10);
-
-        if (!deleteCount || deleteCount < 2 || deleteCount > 100)
-            return message.reply("Неверное кол-во сообщений");
-
-        const fetched = await message.channel.fetchMessages({
-            count: deleteCount
-        });
-        message.channel.bulkDelete(fetched)
-            .catch(error => message.reply(`Couldn't delete messages because of: ${error}`));
-    }
 });
 
 client.on('message', message => {
@@ -128,7 +116,7 @@ client.on('message', message => {
         message.delete().catch(O_o => {});
         //servername = message.author.name
         avatar = message.guild.iconURL
-        //verified = "Нет"
+            //verified = "Нет"
         const embed = new Discord.RichEmbed()
             .setColor(16772322)
             .setTitle("Информация о сервере ZOOPARK")
@@ -137,9 +125,24 @@ client.on('message', message => {
             .setThumbnail(avatar)
             .setFooter("ZOOPARK")
         message.channel.send({
-         embed
-       });
+            embed
+        });
     }
 });
+client.on('message', message => {
+    if (message.content === "zp!purge") {
+
+        const deleteCount = parseInt(args[0], 10);
+
+        if (!deleteCount || deleteCount < 2 || deleteCount > 100)
+            return message.reply("Неверное кол-во сообщений");
+
+        const fetched = await message.channel.fetchMessages({
+            count: deleteCount
+        });
+        message.channel.bulkDelete(fetched)
+            .catch(error => message.reply(`Couldn't delete messages because of: ${error}`));
+    }
+})
 
 client.login(process.env.BOT_TOKEN);
