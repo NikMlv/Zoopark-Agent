@@ -115,22 +115,19 @@ client.on('message', message => {
 client.on('message', message => {
     if (message.content === 'zp!zoopark') {
         message.delete().catch(O_o => {});
-        servername = message.author.name
-        avatar = message.guild.avatarURL
-        verified = "Нет"
-        if (message.author.verified == true) {
-            verified = "Да"
-        }
-        const embed = new Discord.RichEmbed()
-            .setColor(16772322)
-            .setTitle(servername)
-            .addField("ID пользователя:", message.gulld.id, false)
-            .addField("Создан: ", message.gulld.createdAt, false)
-            .setThumbnail(avatar)
-            .setFooter("ZOOPARK")
-        message.channel.send({
-            embed
-        });
+        //servername = message.author.name
+        //avatar = message.guild.avatarURL
+        //verified = "Нет"
+        //const embed = new Discord.RichEmbed()
+            //.setColor(16772322)
+            //.setTitle(servername)
+            //.addField("ID пользователя:", message.gulld.id, false)
+            //.addField("Создан: ", message.gulld.createdAt, false)
+            //.setThumbnail(avatar)
+            //.setFooter("ZOOPARK")
+        //message.channel.send({
+         //   embed
+       // });
     }
 });
 
