@@ -58,7 +58,7 @@ client.on("message", message => {
         const embed = new Discord.RichEmbed()
             .setColor(32768)
             .setTitle("Обновление")
-            .setDescription("Из-за неактивности удалён **daun-oldfag-chat**. В будущем он скорее всего вернётся в виде обычного чата для олдфагов, причем в основных чатах будет наблюдаться большой актив.")
+            .setDescription("Маленький апдейт. Теперь каждый день в чате **#for-dj-bot** (в закрепленных сообщениях) будет выкладываться одна композиция (из Featured листа Одмена). Вы сможете оценить её и послушать с помощью муз. ботов.")
             .setFooter("ZOOPARK")
             .setTimestamp()
         message.channel.send({
