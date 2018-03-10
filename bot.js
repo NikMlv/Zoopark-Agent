@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-//const moment = require("moment");
+const moment = require("moment");
 require("moment-duration-format");
 const client = new Discord.Client();
 const rule = {
