@@ -116,11 +116,11 @@ client.on('message', message => {
     if (message.content === 'zp!zoopark') {
         message.delete().catch(O_o => {});
         //servername = message.author.name
-        //avatar = message.guild.avatarURL
+        avatar = message.guild.avatarURL
         //verified = "Нет"
         const embed = new Discord.RichEmbed()
             .setColor(16772322)
-            //.setTitle(servername)
+            .setTitle("Информация о сервере ZOOPARK")
             //.addField("ID пользователя:", message.gulld.id, false)
             //.addField("Создан: ", message.gulld.createdAt, false)
             //.setThumbnail(avatar)
