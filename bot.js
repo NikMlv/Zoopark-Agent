@@ -119,7 +119,7 @@ client.on('message', message => {
             .setColor(16772322)
             .setTitle("Информация о сервере ZOOPARK")
             .addField("Кол-во человек на сервере:", message.guild.memberCount, false)
-            .addFiels("Уровень Верификации:", message.guild.verificationLevel, false)
+            .addField("Уровень Верификации:", message.guild.verificationLevel, false)
             //.addField("Создан: ", message.gulld.createdAt, false)
             .setThumbnail(avatar)
             .setFooter("ZOOPARK")
