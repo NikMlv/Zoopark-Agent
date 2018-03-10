@@ -4,6 +4,8 @@ const rule = {
     owner: "421560772930437130"
 }
 const creators = ['207821802431315968, 356456653916340224'];
+const moment = require("moment");
+require("moment-duration-format");
 
 client.on("guildMemberAdd", member => {
     const embed = new Discord.RichEmbed()
