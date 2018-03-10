@@ -1,11 +1,12 @@
 const Discord = require('discord.js');
+//const moment = require("moment");
+require("moment-duration-format");
 const client = new Discord.Client();
 const rule = {
     owner: "421560772930437130"
 }
 const creators = ['207821802431315968, 356456653916340224'];
-//const moment = require("moment");
-//require("moment-duration-format");
+
 
 client.on("guildMemberAdd", member => {
     const embed = new Discord.RichEmbed()
@@ -105,8 +106,8 @@ client.on('message', message => {
             .addField("Создан: ", message.author.createdAt, false)
             .addField("Аккаунт верифицирован? ", verified, false)
             //.addField("Joined At", `${moment.utc(message.author.joinedAt).format("dddd, MMMM Do YYYY, HH:mm:ss")}`, true)
-        //.addField("Вы присоеднилсь к серверу: ", message.guild.joinedAt, false)
-        .setThumbnail(avatar)
+            //.addField("Вы присоеднилсь к серверу: ", message.guild.joinedAt, false)
+            .setThumbnail(avatar)
             .setFooter("ZOOPARK")
         message.channel.send({
             embed
