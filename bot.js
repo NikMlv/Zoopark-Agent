@@ -121,8 +121,8 @@ client.on('message', message => {
         const embed = new Discord.RichEmbed()
             .setColor(16772322)
             .setTitle("Информация о сервере ZOOPARK")
-            .addField("ID сервера:", message.gulld.id, false)
-            //.addField("Создан: ", message.gulld.createdAt, false)
+            //.addField("ID сервера:", message.gulld.id, false)
+            .addField("Создан: ", message.gulld.createdAt, false)
             .setThumbnail(avatar)
             .setFooter("ZOOPARK")
         message.channel.send({
