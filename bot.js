@@ -102,8 +102,9 @@ client.on('message', message => {
             .addField("Полный никнейм: ", message.author.tag, false)
             .addField("Создан: ", message.author.createdAt, false)
             .addField("Аккаунт верифицирован? ", verified, false)
-            //.addField("Вы присоеднилсь к серверу: ", message.guild.joinedAt, false)
-            .setThumbnail(avatar)
+            .addField("Создан: ", `${moment.utc(message.author.createdAt).format("dddd, MMMM Do YYYY, HH:mm:ss")}`, false);
+        //.addField("Вы присоеднилсь к серверу: ", message.guild.joinedAt, false)
+        .setThumbnail(avatar)
             .setFooter("ZOOPARK")
         message.channel.send({
             embed
