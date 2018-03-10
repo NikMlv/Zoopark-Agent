@@ -75,9 +75,18 @@ client.on("message", message => {
             embed
         });
     }
-    if (command === "channel" && (message.author.id == "356456653916340224")) {
-        message.delete().catch(O_o => {});
-        TestYouTube();
+    if (command === "purge") {
+
+        const deleteCount = parseInt(args[0], 10);
+
+        if (!deleteCount || deleteCount < 2 || deleteCount > 100)
+            return message.reply("Неверное кол-во сообщений");
+
+        const fetched = await message.channel.fetchMessages({
+            count: deleteCount
+        });
+        message.channel.bulkDelete(fetched)
+            .catch(error => message.reply(`Couldn't delete messages because of: ${error}`));
     }
 });
 
@@ -105,7 +114,7 @@ client.on('message', message => {
             .addField("Полный никнейм: ", message.author.tag, false)
             .addField("Создан: ", message.author.createdAt, false)
             .addField("Аккаунт верифицирован? ", verified, false)
-            .addField("Вы присоеднилсь к серверу: ", userID.joinedAt, false)
+            .addField("Вы присоеднилсь к серверу: ", message.author.joinedAt, false)
             .setThumbnail(avatar)
             .setFooter("ZOOPARK")
         message.channel.send({
