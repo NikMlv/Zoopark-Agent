@@ -51,6 +51,10 @@ client.on("message", message => {
         message.delete().catch(O_o => {});
         message.channel.send(sayMessage);
     }
+    if (command === "ping") {
+        const m = await message.channel.send("Ping?");
+        m.edit(`Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(client.ping)}ms`);
+    }
     if (command === "upd-embed" && (message.author.id == "356456653916340224")) {
         message.delete().catch(O_o => {});
         const embed = new Discord.RichEmbed()
