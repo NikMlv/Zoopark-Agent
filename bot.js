@@ -102,7 +102,7 @@ client.on('message', message => {
             .addField("Полный никнейм: ", message.author.tag, false)
             .addField("Создан: ", message.author.createdAt, false)
             .addField("Аккаунт верифицирован? ", verified, false)
-           // .addField("Создан: ", message.author.createdAt, false);
+            .addField("Joined At", `${moment.utc(member.joinedAt).format("dddd, MMMM Do YYYY, HH:mm:ss")}`, true)
         //.addField("Вы присоеднилсь к серверу: ", message.guild.joinedAt, false)
         .setThumbnail(avatar)
             .setFooter("ZOOPARK")
