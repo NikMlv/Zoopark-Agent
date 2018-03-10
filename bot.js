@@ -118,16 +118,16 @@ client.on('message', message => {
         //servername = message.author.name
         //avatar = message.guild.avatarURL
         //verified = "Нет"
-        //const embed = new Discord.RichEmbed()
-            //.setColor(16772322)
+        const embed = new Discord.RichEmbed()
+            .setColor(16772322)
             //.setTitle(servername)
             //.addField("ID пользователя:", message.gulld.id, false)
             //.addField("Создан: ", message.gulld.createdAt, false)
             //.setThumbnail(avatar)
             //.setFooter("ZOOPARK")
-        //message.channel.send({
-         //   embed
-       // });
+        message.channel.send({
+         embed
+       });
     }
 });
 
