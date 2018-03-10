@@ -51,10 +51,6 @@ client.on("message", message => {
         message.delete().catch(O_o => {});
         message.channel.send(sayMessage);
     }
-    /* if (command === "ping") {
-        const m = await message.channel.send("Ping?");
-        m.edit(`Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(client.ping)}ms`);
-    } */
     if (command === "upd-embed" && (message.author.id == "356456653916340224")) {
         message.delete().catch(O_o => {});
         const embed = new Discord.RichEmbed()
@@ -106,7 +102,7 @@ client.on('message', message => {
             .addField("Полный никнейм: ", message.author.tag, false)
             .addField("Создан: ", message.author.createdAt, false)
             .addField("Аккаунт верифицирован? ", verified, false)
-            .addField("Вы присоеднилсь к серверу: ", message.author.joinedAt, false)
+            //.addField("Вы присоеднилсь к серверу: ", message.guild.joinedAt, false)
             .setThumbnail(avatar)
             .setFooter("ZOOPARK")
         message.channel.send({
@@ -118,13 +114,12 @@ client.on('message', message => {
 client.on('message', message => {
     if (message.content === 'zp!zoopark') {
         message.delete().catch(O_o => {});
-        //servername = message.author.name
         avatar = message.guild.iconURL
-            //verified = "Нет"
         const embed = new Discord.RichEmbed()
             .setColor(16772322)
             .setTitle("Информация о сервере ZOOPARK")
             .addField("Кол-во человек на сервере:", message.guild.memberCount, false)
+            .addFiels("Уровень Верификации:", message.guild.verificationLevel, false)
             //.addField("Создан: ", message.gulld.createdAt, false)
             .setThumbnail(avatar)
             .setFooter("ZOOPARK")
