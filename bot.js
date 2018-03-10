@@ -1,6 +1,5 @@
 const Discord = require('discord.js');
-const moment = require("moment");
-require("moment-duration-format");
+const Moment = require('Moment.js');
 const client = new Discord.Client();
 const rule = {
     owner: "421560772930437130"
