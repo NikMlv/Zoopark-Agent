@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const Moment = require('Moment.js');
+//const Moment = require('Moment.js');
 const client = new Discord.Client();
 const rule = {
     owner: "421560772930437130"
