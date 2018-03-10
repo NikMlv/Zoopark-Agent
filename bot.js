@@ -96,6 +96,7 @@ client.on('message', message => {
         verified = "Нет"
         if (message.author.verified == true) {
             verified = "Да"
+            userID = message.author.id
         }
         const embed = new Discord.RichEmbed()
             .setColor(16772322)
@@ -104,7 +105,7 @@ client.on('message', message => {
             .addField("Полный никнейм: ", message.author.tag, false)
             .addField("Создан: ", message.author.createdAt, false)
             .addField("Аккаунт верифицирован? ", verified, false)
-            .addField("Вы присоеднилсь к серверу: ",message.author.joinedAt, false)
+            .addField("Вы присоеднилсь к серверу: ", userID.joinedAt, false)
             .setThumbnail(avatar)
             .setFooter("ZOOPARK")
         message.channel.send({
