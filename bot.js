@@ -131,8 +131,8 @@ client.on('message', message => {
 });
 client.on('message', message => {
     if (message.content === "zp!purge") {
-
-        const deleteCount = parseInt(args[0], 10);
+        message.delete().catch(O_o => {});
+        /*const deleteCount = parseInt(args[0], 10);
 
         if (!deleteCount || deleteCount < 2 || deleteCount > 100)
             return message.reply("Неверное кол-во сообщений");
@@ -141,7 +141,7 @@ client.on('message', message => {
             count: deleteCount
         });
         message.channel.bulkDelete(fetched)
-            .catch(error => message.reply(`Couldn't delete messages because of: ${error}`));
+            .catch(error => message.reply(`Couldn't delete messages because of: ${error}`)); */
     }
 })
 
