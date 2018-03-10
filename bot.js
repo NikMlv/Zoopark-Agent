@@ -120,7 +120,7 @@ client.on('message', message => {
             .setTitle("Информация о сервере ZOOPARK")
             .addField("Кол-во человек на сервере:", message.guild.memberCount, false)
             .addField("Уровень Верификации:", message.guild.verificationLevel, false)
-            //.addField("Создан: ", message.gulld.createdAt, false)
+            .addField("Создан: ", message.guild.createdAt, false)
             .setThumbnail(avatar)
             .setFooter("ZOOPARK")
         message.channel.send({
