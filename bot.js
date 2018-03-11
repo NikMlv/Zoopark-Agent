@@ -83,8 +83,8 @@ client.on("message", message => {
         if ((message.author.username.indexOf("🐺") != -1) && (message.author.id != "356456653916340224")) {
             message.channel.send("`Волк обнаружен!` Роль успешно выдана");
             message.member.addRole('421275327302467585');
-        } 
-        if ((message.author.username.indexOf("🐺") = -1) && (message.author.id != "356456653916340224"))
+        }
+        if ((message.author.username.indexOf("🐺") = -1) && (message.author.id != "356456653916340224")) {
             message.channel.send("`Волка не обнаружено!` Роль не выдана.");
             message.member.removeRole('421275327302467585');
         }
@@ -92,74 +92,73 @@ client.on("message", message => {
             message.channel.send("`Волк обнаружен!` Роль успешно выдана");
             message.member.addRole('421275327302467585');
         }
-    }
-});
+    };
 
-client.on('message', message => {
-    if (message.content === 'zp!avatar') {
-        message.delete().catch(O_o => {});
-        message.reply(message.author.avatarURL);
-    }
-});
-
-client.on('message', message => {
-    if (message.content === 'zp!profile') {
-        message.delete().catch(O_o => {});
-        username = message.author.username
-        avatar = message.author.avatarURL
-        verified = "Нет"
-        if (message.author.verified == true) {
-            verified = "Да"
-            userID = message.author.id
+    client.on('message', message => {
+        if (message.content === 'zp!avatar') {
+            message.delete().catch(O_o => {});
+            message.reply(message.author.avatarURL);
         }
-        const embed = new Discord.RichEmbed()
-            .setColor(16772322)
-            .setTitle(username)
-            .addField("ID пользователя:", message.author.id, false)
-            .addField("Полный никнейм: ", message.author.tag, false)
-            .addField("Создан: ", message.author.createdAt, false)
-            .addField("Аккаунт верифицирован? ", verified, false)
-            //.addField("Joined At", `${moment.utc(message.author.joinedAt).format("dddd, MMMM Do YYYY, HH:mm:ss")}`, true)
-            //.addField("Вы присоеднилсь к серверу: ", message.guild.joinedAt, false)
-            .setThumbnail(avatar)
-            .setFooter("ZOOPARK")
-        message.channel.send({
-            embed
-        });
-    }
+    });
+
+    client.on('message', message => {
+        if (message.content === 'zp!profile') {
+            message.delete().catch(O_o => {});
+            username = message.author.username
+            avatar = message.author.avatarURL
+            verified = "Нет"
+            if (message.author.verified == true) {
+                verified = "Да"
+                userID = message.author.id
+            }
+            const embed = new Discord.RichEmbed()
+                .setColor(16772322)
+                .setTitle(username)
+                .addField("ID пользователя:", message.author.id, false)
+                .addField("Полный никнейм: ", message.author.tag, false)
+                .addField("Создан: ", message.author.createdAt, false)
+                .addField("Аккаунт верифицирован? ", verified, false)
+                //.addField("Joined At", `${moment.utc(message.author.joinedAt).format("dddd, MMMM Do YYYY, HH:mm:ss")}`, true)
+                //.addField("Вы присоеднилсь к серверу: ", message.guild.joinedAt, false)
+                .setThumbnail(avatar)
+                .setFooter("ZOOPARK")
+            message.channel.send({
+                embed
+            });
+        }
+    });
+
+    client.on('message', message => {
+        if (message.content === 'zp!zoopark') {
+            message.delete().catch(O_o => {});
+            avatar = message.guild.iconURL
+            const embed = new Discord.RichEmbed()
+                .setColor(16772322)
+                .setTitle("Информация о сервере ZOOPARK")
+                .addField("Кол-во человек на сервере:", message.guild.memberCount, false)
+                .addField("Уровень Верификации:", message.guild.verificationLevel, false)
+                .addField("Создан: ", message.guild.createdAt, false)
+                .setThumbnail(avatar)
+                .setFooter("ZOOPARK")
+            message.channel.send({
+                embed
+            });
+        }
+    });
+    client.on('message', message => {
+        if (message.content === "zp!purge") {
+            message.delete().catch(O_o => {});
+            /*const deleteCount = parseInt(args[0], 10);
+
+            if (!deleteCount || deleteCount < 2 || deleteCount > 100)
+                return message.reply("Неверное кол-во сообщений");
+
+            const fetched = await message.channel.fetchMessages({
+                count: deleteCount
+            });
+            message.channel.bulkDelete(fetched)
+                .catch(error => message.reply(`Couldn't delete messages because of: ${error}`)); */
+        }
+    })
 });
-
-client.on('message', message => {
-    if (message.content === 'zp!zoopark') {
-        message.delete().catch(O_o => {});
-        avatar = message.guild.iconURL
-        const embed = new Discord.RichEmbed()
-            .setColor(16772322)
-            .setTitle("Информация о сервере ZOOPARK")
-            .addField("Кол-во человек на сервере:", message.guild.memberCount, false)
-            .addField("Уровень Верификации:", message.guild.verificationLevel, false)
-            .addField("Создан: ", message.guild.createdAt, false)
-            .setThumbnail(avatar)
-            .setFooter("ZOOPARK")
-        message.channel.send({
-            embed
-        });
-    }
-});
-client.on('message', message => {
-    if (message.content === "zp!purge") {
-        message.delete().catch(O_o => {});
-        /*const deleteCount = parseInt(args[0], 10);
-
-        if (!deleteCount || deleteCount < 2 || deleteCount > 100)
-            return message.reply("Неверное кол-во сообщений");
-
-        const fetched = await message.channel.fetchMessages({
-            count: deleteCount
-        });
-        message.channel.bulkDelete(fetched)
-            .catch(error => message.reply(`Couldn't delete messages because of: ${error}`)); */
-    }
-})
-
 client.login(process.env.BOT_TOKEN);
