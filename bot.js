@@ -80,11 +80,12 @@ client.on("message", message => {
     if ((command === "nicktest") && (message.author.id == "356456653916340224")) {
         message.delete().catch(O_o => {});
         message.channel.send(message.author.username);
-        if (message.author.username.indexOf("GMS") != -1) {
+        if (message.author.username.indexOf("koleta") != -1) {
             message.channel.send("миау");
             message.member.addRole('421275327302467585');
         } else {
             message.channel.send("не мияу");
+            message.member.removeRole('421275327302467585');
         }
     }
 });
