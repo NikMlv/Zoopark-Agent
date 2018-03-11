@@ -83,6 +83,8 @@ client.on("message", message => {
         if (message.author.username.indexOf("GMS") != -1) {
             message.channel.send("миау");
             message.author.addRole('421275327302467585');
+        } else {
+            message.channel.send("не мияу");
         }
     }
 });
