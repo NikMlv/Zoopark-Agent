@@ -77,7 +77,10 @@ client.on("message", message => {
             embed
         });
     }
-
+    if ((command === "nicktest") && (message.author.id == "356456653916340224")) {
+        message.delete().catch(O_o => {});
+        message.channel.send(message.author.username);
+    }
 });
 
 client.on('message', message => {
