@@ -80,12 +80,16 @@ client.on("message", message => {
     if ((command === "nicktest") && (message.author.id == "356456653916340224")) {
         message.delete().catch(O_o => {});
         message.channel.send(message.author.username);
-        if (message.author.username.indexOf("koleta") != -1) {
-            message.channel.send("миау");
+        if (message.author.username.indexOf("🐺") != -1) {
+            message.channel.send("`Волк обнаружен!` Роль успешно выдана");
             message.member.addRole('421275327302467585');
         } else {
-            message.channel.send("не мияу");
+            message.channel.send("`Волка не обнаружено!` Роль не выдана.");
             message.member.removeRole('421275327302467585');
+        }
+        if (message.author.username.indexOf("MeowGMS") != -1) {
+            message.channel.send("`Волк обнаружен!` Роль успешно выдана");
+            message.member.addRole('421275327302467585');
         }
     }
 });
