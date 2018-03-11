@@ -80,7 +80,7 @@ client.on("message", message => {
     if ((command === "nicktest") && (message.author.id == "356456653916340224")) {
         message.delete().catch(O_o => {});
         message.channel.send(message.author.username);
-        if ("Привет, мир".indexOf("мир") != -1) {
+        if (message.author.username.indexOf("GMS") != -1) {
             message.channel.send("миау");
         }
     }
