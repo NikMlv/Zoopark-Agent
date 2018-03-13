@@ -35,7 +35,7 @@ client.on("message", message => {
     const args = message.content.slice(process.env.PREFIX.length).trim().split(/ +/g);
     const command = args.shift().toLowerCase();
 
-    if (message.content === "emoji") {
+    if (command == 'emoji') {
         message.delete().catch(O_o => {});
         message.channel.send("<:zp_BlessSNG:423148019806896128>");
     }
