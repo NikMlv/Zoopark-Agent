@@ -100,19 +100,6 @@ client.on("message", message => {
         }
     }
 });
-let member = reaction.message.guild.fetchMember(user);
-if (user.bot) return;
-if (reaction.message.id === '424476267715231754') {
-    reaction.remove(user);
-    if (reaction.emoji.name === '1⃣') {
-        if (member.roles.has('424206294015279105'))
-            member.removeRole('424206294015279105').catch(console.error);
-        if (!member.roles.has('424206294015279105'))
-            member.addRole('4424206294015279105').catch(console.error);
-    } else if (reaction.emoji.name === '2⃣') {
-        message.send.channel("Ыааа");
-    }
-} else console.log('fuck');
 
 client.on('message', message => {
     if (message.content === 'zp!avatar') {
