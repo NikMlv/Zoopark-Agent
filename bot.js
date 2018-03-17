@@ -154,7 +154,7 @@ client.on('message', message => {
     }
 });
 client.on('message', message => {
-    if (message.content.toUpperCase().indexOf("нет ты".toUpperCase())) {
+    if (message.content.toUpperCase().indexOf("нет ты".toUpperCase()) != -1) {
         message.channel.send('Нет ты');
     }
 });
