@@ -154,13 +154,16 @@ client.on('message', message => {
     }
 });
 client.on('message', message => {
+    if (message.content === 'нет ты') {
+        message.channel.send('Нет ты');
+    }
+});
+client.on('message', message => {
     if (message.content === "zp!purge") {
         message.delete().catch(O_o => {});
         /*const deleteCount = parseInt(args[0], 10);
-
         if (!deleteCount || deleteCount < 2 || deleteCount > 100)
             return message.reply("Неверное кол-во сообщений");
-
         const fetched = await message.channel.fetchMessages({
             count: deleteCount
         });
