@@ -154,7 +154,7 @@ client.on('message', message => {
     }
 });
 client.on('message', message => {
-    if (message.content.toUpperCase().indexOf("нет ты".toUpperCase()) != -1) {
+    if ((message.content.toUpperCase().indexOf("нет ты".toUpperCase()) != -1) && (message.author.id != 421560772930437130)) {
         message.channel.send('Нет ты');
     }
 });
